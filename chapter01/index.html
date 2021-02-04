@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>入会申し込み</title>
+
+    <!-- CSSの内部参照（スタイルシートとHTMLの分離） -->
+    <!-- <style>
+        p {
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 50px;
+        }
+    </style> -->
+
+    <!-- CSSの外部参照（relはリレーション） -->
+    <link rel="stylesheet" href="css/sanitize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="content">
+        <h1>入会申し込み</h1>
+        <p>入会するには、次のフォームに必要事項をご記入ください</p>
+        <div class="control">
+            <label for="mymail">メールアドレス　<span class="required">必須</span></label>
+            <input id="mymail" type="email" name="mymail">
+        </div>
+        <div class="control">
+            <label for="password">パスワード　<span class="required">必須</span></label>
+            <input id="password" type="password" name="password">
+        </div>
+        <div class="control">
+            <button type="submit">登録する</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 学習MEMO -->
+
+<!-- 日本語の際の文字コードは基本的に「UTF-8」が使用される -->
+
+<!-- 主なタグ
+    h1 = 大見出し
+    p = 段落（パラグラフ）
+    div = エリアとしての役割、スタイルを調整しやすくしたり、グループに分けて扱えたりする（ディビジョン）
+    span = 改行したくないけど、エリアとして示したいときに使用。divのインラインバージョン
+    label = inputタグの名目等に使用する。属性for="○◯○"で、id="○○○"を持ったinputタグと紐付けることができる
+ -->
+
+<!-- 属性
+    class = グループなど分類したいときに使用。CSSで使用できる。グローバル属性
+ -->
+
+<!-- ウェブブラウザには「デフォルトCSS」というものがある
+画面の作成をする際に少し邪魔なので外したいが、簡単に外せる設定などがあるわけではない
+そこで「リセットCSS」というものを使用する
+リセットCSSには色々な種類がある（今回は sanitize.css を使用）-->
+
+<!-- ※ タグの中にstyle属性で書いたものを「インラインスタイルシート」という -->
+<!-- ※ font-sizeのように、どんなタグにも使える属性を「グローバル属性」という -->
+<!-- ※ margin（外側の余白）のようにmargin-top,margin-rightなど個別に設定できるものを一気に設定するプロパティを「ショートハンドプロパティ」という -->
+
+
+<!-- CSSの構造
+    font-size ...「プロパティ」
+    24px ...「値」
+ -->
+
+<!-- rgd法 == rgd(0, 10, 0)などの色の指定の仕方、vscodeだとパレットが表示される -->
+<!-- rgdの数字を16進数を使用したカラーコードの指定もある -->
+
+<!-- margin: 0 auto; == 要素を中央に寄せる(上下は０、左右はautoという意味になる) -->
+<!-- marginを上下左右それぞれ指定するときは上右下左と、時計回りに指定する -->
+
+<!-- border: 1px solid #d1d1d1; == borderで枠を作れる。solidは実線、色も指定が可能-->
+
+<!-- padding: 30px; == 内側の余白を決める -->
+
+<!-- レスポンシブ ウェブ デザイン = 画面の大きさによって表示が変わる（CSSを使用して画面の幅、解像度を変える） -->

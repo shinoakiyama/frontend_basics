@@ -1,0 +1,55 @@
+p {
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.content {
+    background-color: #fff;
+    width: 600px;
+    margin: 10px auto;  /* [プロパティ]margin 外側余白 */
+    border: 1px solid #d1d1d1;  /* [プロパティ]border 枠 [値]solid 実線 */
+    padding: 30px;  /* [プロパティ]padding 内側余白 */
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 1.2em;  /* [値]em 何倍か */
+    width: 100%;  /* [値]100%幅いっぱい */
+    padding: 8px;
+}
+
+button {
+    width: 100%;
+    background-color: #2096f3;
+    color: #fff;
+    padding: 15px;
+    border: 0;
+    border-radius: 3px; /* [プロパティ]border-radius 角を丸くする */
+    box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+
+.required {
+    color: #f33;
+    font-size: .9em;
+    padding: 3px;
+    background-color: #fee;
+    font-weight: bold;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.control {
+    margin-bottom: 3em;
+}
+
+label {
+    display: block; /* 改行されないタグに対して */
+    margin-bottom: .5em;
+}

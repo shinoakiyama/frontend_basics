@@ -1,0 +1,151 @@
+@import url(sanitize.css);  /* @import = cssファイルからからcssファイルを参照する */
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+body {
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.container {
+    /* max-width 最大の幅。画面幅が指定したpx以下になった時は画面に合わせて縮む
+    スマホの画面への対応は必ずしも「メディアクエリー」でやらなければならないというわけではない */
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin: 0 auto;
+}
+
+header {
+    background-color: #422814;
+    padding: 10px;
+    color: #fff;
+}
+
+/* 同じタグでも親タグが違えば別のタグとして扱える
+（今回でいうとheaderタグのh1タグとsectionタグのh1タグで別物として扱える） */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;  /* 通常h1タグは太字になっているがそれを通常の太さに戻した */ 
+    text-align: center;
+    font-family: 'Sriracha', cursive;
+}
+/* 書体を表示するためにはPCにインストールされている必要がある。
+インストールされていないと違ったものに表示されてしまう
+そこで近年使用されているのが「ウェブフォント」ウェブブラウザがページを表示する際に書体をダウンロードしてくれる
+今回はグーグルフォントを使用　https://fonts.google.com/
+※ 長文などに用いてしまうとページ読み込みに時間がかかるのでタイトルなどのみに使用すること（長文はデバイスフォントでやってあげる）
+ */
+
+.description {
+    clear: left;  /* 変に折り返し回り込みが起きているときに解除する */
+}
+
+.description img {
+    float: left;
+    margin: 0 10px 10px 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+/* :hover などは「擬似クラス」という。「:」の後に何かキーワードを設定することによって状態によってのアクションを決めることができる。
+標準擬似クラスなどで調べると他にも色々出てくるので調べてみよう。
+（hoverはマウスを重ねた状態のこと） */
+.description img:hover {
+    opacity: .5;
+}
+
+.information h1 {
+    font-size: 18px;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.information .type {
+    display: inline;
+    background-color: #e35a4d;
+    padding:  3px 5px;
+    font-size: 80%;
+    color: #fff;
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.songs {
+    margin: 0 0 20px;
+}
+
+.songs h2 {
+    clear: left;
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0;
+    background-color: #e6e4dd;
+    padding: 5px 10px;
+}
+
+.songs ol {
+    padding: 0;
+    margin: 0;
+    list-style: decimal inside;
+}
+
+.songs li {
+    border-bottom: 1px solid #ccc;
+    width: 50%;
+    float: left;  /* 左側に回り込ませる */
+    padding: 5px 10px;
+}
+
+/* ！！！！float（浮かし）を使うと、背景がついてこなかったりする
+それを解消するのが以下
+以下を作成したらHTMLの方で（floatを使用した要素の親タグなどで）class指定して解消しよう */
+.clearfix:after {
+    content: " ";  /* 半角空文字 */
+    display: table;
+    clear: both;
+}
+
+
+/* text-decoration: none でリンク文字の下線を消せるが、アクセシビリティ的に問題あり */
+a {
+    color: #666;
+}
+
+/* CSSのセレクターを確認しておこう */
+
+footer {
+    text-align: center;
+    font-size: 80%;
+}
+
+/* 「メディアクエリー」= スマートフォンに対応させるためのCSSの機能 */
+/* only 過去のウェブブラウザでの誤作動を防ぐ
+（onlyをつけることで、メディアクエリに対応していないブラウザにはメディアクエリを読み込ませないようにできます。）  */
+@media only screen and (max-width: 600px) {
+    .description img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    header {
+        padding: 5px;
+    }
+    header h1 {
+        font-size: 12px;
+    }
+    .information h1 {
+        font-size: 14px;
+    }
+    .songs li {
+        float: none;
+        /* inherit 親の要素に合わせる */
+        width: inherit;
+    }
+}

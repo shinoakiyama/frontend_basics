@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <title>イヤホンジャックの向こう側</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <header>
+                <h1>COCOA</h1>
+            </header>
+
+            <div class="content">
+
+                <section class="information">
+                    <h1>イヤホンジャックの向こう側</h1>
+                    <p class="type">Album</p>
+                    <div class="description">
+                        <a href="#"><img src="img/jacket.png" alt="イヤホンジャックの向こう側のジャケット写真"></a>
+                        <p>COCOA ４枚目のアルバムとなる今作。ジャケットデザインに色鉛筆画家の「カタヒラシュンシ」氏を迎え、音楽と絵のコラボを実現させた一枚。</p>
+                        <p>HONDA CARS 静岡CM タイアップの「キミのうた」をはじめ、完全書き下ろしの新曲３曲を含む全６曲を収録。<br>
+                        イヤホンジャックの向こう側に広がる世界を、ぜひご堪能ください。</p>
+                    </div>
+                </section>
+
+                <section class="songs">
+                    <h2>収録曲</h2>
+                    <ol class="clearfix">
+                        <li><a href="=https://www.amazon.co.jp/gp/video/detail/B07X45Z6HG/ref=atv_hm_hom_1_c_DEaieV_4_2" target="_self">C#</a></li>
+                        <li>ワンルームファッションショー</li>
+                        <li>ハッピータイム</li>
+                        <li>シャンディガフ</li>
+                        <li>僕は知らない</li>
+                        <li>キミのうた</li>
+                    </ol>
+                </section>
+
+            </div>
+
+            <footer>
+                <!-- ©︎は環境依存文字なので「&copy;」で指定してあげる 
+                &copy; のことを「実体参照」という。©︎のような表現できない文字に対して割り当てられている-->
+                &copy; 2020 COCOA
+            </footer>
+
+        </div>
+    </body>
+</html>
+
+
+<!-- 「セクション」を分ける => 目立たせたい見出しがいくつかあるが、h1タグを２つ使用するのは不自然
+    セクションを分ければh1タグが２つあっても不自然ではない。今回はheaderタグとsectionタグで分けた
+    ※sectionタグは1ファイルにいくつも定義することができるが、見分けをつけるためにclass属性で分類する
+ -->
+
+<!-- class属性 => グローバル属性で、どのタグにも使用できる。
+    headerタグなど１ファイルに１つしかないタグには使用しないが、
+    sectionタグ、divタグなど同じタグだが分類して扱いたい場合などにはよく使用される。
+    （id属性とよく似ているが、CSSと使用する際にはclass属性を使用する。id属性はJavaScriptと使用することが多い）
+ -->
+
+<!-- brタグ = 空要素。ブレイク、改行 -->
+
+<!-- imgタグ = 画像を表示する。src属性（ソース）で画像の場所を示し、alt属性（オルタナティブ）でなんの画像かを示す -->
+
+<!-- aタグ = リンクタグ。href でURLを指定し、target で同じブラウザで開くか（_self）、新規のブラウザで開くか（_blank）など決められる
+href="#" という表現はまだリンク先が決まっていない時などによく用いられる。 -->
+
+<!-- olタグ = オーダードリスト、リストを作る（中には必ずliタグが必要になってくる） 
+    ● 属性をいくつか指定できる。
+    - start="数値" でスタートする数値を決められる
+    - type="a" などとするとa.b.c.d....とアルファベットで順番が示される（a/A/i/Iなどを指定可能）
+    - reversed 上下を逆順に入れることができる
+-->
